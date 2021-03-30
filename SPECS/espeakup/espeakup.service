@@ -11,4 +11,4 @@ ExecReload=/bin/kill $MAINPID
 Restart=always
 
 [Install]
-WantedBy=sound.target multi-user.target
+WantedBy=sound.target

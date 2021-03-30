@@ -1,7 +1,7 @@
 Summary:        Connector for espeak and speakup
 Name:           espeakup
 Version:        0.80
-Release:        1%{?dist}
+Release:        2%{?dist}
 License:        GPLv3
 Vendor:         Microsoft Corporation
 Distribution:   Mariner
@@ -52,6 +52,10 @@ install -m755 %{SOURCE2} %{buildroot}%{_libdir}/systemd/system/%{name}.service
 %{_mandir}/man8/*
 
 %changelog
+* Tue Mar 30 2021 Thomas Crain <thcrain@microsoft.com> - 0.80-2
+- Edit systemd service file to be more in line with other distros
+- Add timeout to systemd service
+
 * Thu Jan 07 2021 Thomas Crain <thcrain@microsoft.com> - 0.80-1
 - Original version for CBL-Mariner (license: MIT)
 - License verified
