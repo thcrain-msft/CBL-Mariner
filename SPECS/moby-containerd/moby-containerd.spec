@@ -3,7 +3,7 @@
 Summary: Industry-standard container runtime
 Name: moby-containerd
 Version: 1.3.4+azure
-Release: 2%{?dist}
+Release: 3%{?dist}
 License: ASL 2.0
 Group: Tools/Container
 
@@ -133,21 +133,32 @@ fi
 %{_mandir}/*/*
 
 %changelog
-* Thu Dec 10 2020 Andrew Phelps <anphel@microsoft.com> 1.3.4+azure-2
+* Tue Apr 20 2021 Thomas Crain <thcrain@microsoft.com> - 1.3.4+azure-3
+- Increment release to force republishing using golang 1.15.11 (security update)
+
+* Thu Dec 10 2020 Andrew Phelps <anphel@microsoft.com> - 1.3.4+azure-2
 - Increment release to force republishing using golang 1.15.
-* Thu Jun 11 2020 Andrew Phelps <anphel@microsoft.com> 1.3.4+azure-1
+
+* Thu Jun 11 2020 Andrew Phelps <anphel@microsoft.com> - 1.3.4+azure-1
 - Update to version 1.3.4+azure
-* Wed May 20 2020 Joe Schmitt <joschmit@microsoft.com> 1.3.3+azure-6
+
+* Wed May 20 2020 Joe Schmitt <joschmit@microsoft.com> - 1.3.3+azure-6
 - Remove reliance on existing GOPATH environment variable.
-* Sat May 09 2020 Nick Samson <nisamson@microsoft.com> 1.3.3+azure-5
+
+* Sat May 09 2020 Nick Samson <nisamson@microsoft.com> - 1.3.3+azure-5
 - Added %%license line automatically
-* Wed May 06 2020 Pawel Winogrodzki <pawelwi@microsoft.com> 1.3.3+azure-4
+
+* Wed May 06 2020 Pawel Winogrodzki <pawelwi@microsoft.com> - 1.3.3+azure-4
 - Removing *Requires for "ca-certificates".
-* Tue May 05 2020 Eric Li <eli@microsoft.com> 1.3.3+azure-3
+
+* Tue May 05 2020 Eric Li <eli@microsoft.com> - 1.3.3+azure-3
 - Add #Source0: and license verified
-* Fri May 01 2020 Emre Girgin <mrgirgin@microsoft.com> 1.3.3+azure-2
+
+* Fri May 01 2020 Emre Girgin <mrgirgin@microsoft.com> - 1.3.3+azure-2
 - Renaming go to golang
-* Fri Apr 03 2020 Mohan Datla <mdatla@microsoft.com> 1.3.3+azure-1
+
+* Fri Apr 03 2020 Mohan Datla <mdatla@microsoft.com> - 1.3.3+azure-1
 - Initial CBL-Mariner import from Azure.
+
 * Thu Jan 23 2020 Brian Goff <brgoff@microsoft.com>
 - Initial version

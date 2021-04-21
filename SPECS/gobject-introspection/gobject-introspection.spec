@@ -5,7 +5,7 @@ Name:           gobject-introspection
 Summary:        Introspection system for GObject-based libraries
 %define BaseVersion 1.58
 Version:        %{BaseVersion}.0
-Release:        8%{?dist}
+Release:        9%{?dist}
 Group:          Development/Libraries
 License:        GPLv2+ and LGPLv2+ and MIT
 URL:            https://github.com/GNOME/gobject-introspection
@@ -139,41 +139,62 @@ make  %{?_smp_mflags} check
 %doc %{_mandir}/man1/*.gz
 
 %changelog
-*   Thu Dec 10 2020 Andrew Phelps <anphel@microsoft.com> 1.58.0-8
--   Increment release to force republishing using golang 1.15.
-*   Wed Jul 01 2020 Pawel Winogrodzki <pawelwi@microsoft.com> 1.58.0-7
--   Forcing single job 'make' build to avoid intermittent build errors.
-*   Sat May 09 2020 Nick Samson <nisamson@microsoft.com> 1.58.0-6
--   Added %%license line automatically
-*   Thu Apr 30 2020 Emre Girgin <mrgirgin@microsoft.com> 1.58.0-5
--   Renaming go to golang
-*   Tue Apr 21 2020 Eric Li <eli@microsoft.com> 1.58.0-4
--   Fix Source0: and delete sha1. Verified License. Fixed URL.
-*   Tue Sep 03 2019 Mateusz Malisz <mamalisz@microsoft.com> 1.58.0-3
--   Initial CBL-Mariner import from Photon (license: Apache2).
-*   Mon Dec 10 2018 Alexey Makhalov <amakhalov@vmware.com> 1.58.0-2
--   -devel requires -python.
-*   Thu Sep 06 2018 Anish Swaminathan <anishs@vmware.com> 1.58.0-1
--   Update version to 1.58.0
-*   Tue Jan 02 2018 Alexey Makhalov <amakhalov@vmware.com> 1.52.1-5
--   Add autoreconf to support automake-1.15.1
-*   Mon Aug 28 2017 Kumar Kaushik <kaushikk@vmware.com> 1.52.1-4
--   Disabling make check for Regress-1.0.gir test, bug#1635886
-*   Wed Jun 07 2017 Xiaolin Li <xiaolinl@vmware.com> 1.52.1-3
--   Add python3-xml to python3 sub package Buildrequires.
-*   Tue May 23 2017 Xiaolin Li <xiaolinl@vmware.com> 1.52.1-2
--   Added python3 subpackage.
-*   Wed Apr 12 2017 Danut Moraru <dmoraru@vmware.com> 1.52.1-1
--   Updated to version 1.52.1
-*   Thu Oct 06 2016 ChangLee <changlee@vmware.com> 1.46.0-3
--   Modified %check
-*   Tue May 24 2016 Priyesh Padmavilasom <ppadmavilasom@vmware.com> 1.46.0-2
--   GA - Bump release of all rpms
-*   Thu Feb 25 2016 Kumar Kaushik <kaushikk@vmware.com> 1.46.0-1
--   Updated version.
-*   Mon Oct 12 2015 Xiaolin Li <xiaolinl@vmware.com> 1.43.3-4
--   Moving static lib files to devel package.
-*   Fri Oct 9 2015 Xiaolin Li <xiaolinl@vmware.com> 1.43.3-3
--   Removing la files from packages.
-*   Mon Jul 6 2015 Alexey Makhalov <amakhalov@vmware.com> 1.43.3-2
--   Added more requirements for devel subpackage.
+* Tue Apr 20 2021 Thomas Crain <thcrain@microsoft.com> - 1.58.0-9
+- Increment release to force republishing using golang 1.15.11 (security update)
+
+* Thu Dec 10 2020 Andrew Phelps <anphel@microsoft.com> - 1.58.0-8
+- Increment release to force republishing using golang 1.15.
+
+* Wed Jul 01 2020 Pawel Winogrodzki <pawelwi@microsoft.com> - 1.58.0-7
+- Forcing single job 'make' build to avoid intermittent build errors.
+
+* Sat May 09 2020 Nick Samson <nisamson@microsoft.com> - 1.58.0-6
+- Added %%license line automatically
+
+* Thu Apr 30 2020 Emre Girgin <mrgirgin@microsoft.com> - 1.58.0-5
+- Renaming go to golang
+
+* Tue Apr 21 2020 Eric Li <eli@microsoft.com> - 1.58.0-4
+- Fix Source0: and delete sha1. Verified License. Fixed URL.
+
+* Tue Sep 03 2019 Mateusz Malisz <mamalisz@microsoft.com> - 1.58.0-3
+- Initial CBL-Mariner import from Photon (license: Apache2).
+
+* Mon Dec 10 2018 Alexey Makhalov <amakhalov@vmware.com> - 1.58.0-2
+- -devel requires -python.
+
+* Thu Sep 06 2018 Anish Swaminathan <anishs@vmware.com> - 1.58.0-1
+- Update version to 1.58.0
+
+* Tue Jan 02 2018 Alexey Makhalov <amakhalov@vmware.com> - 1.52.1-5
+- Add autoreconf to support automake-1.15.1
+
+* Mon Aug 28 2017 Kumar Kaushik <kaushikk@vmware.com> - 1.52.1-4
+- Disabling make check for Regress-1.0.gir test, bug#1635886
+
+* Wed Jun 07 2017 Xiaolin Li <xiaolinl@vmware.com> - 1.52.1-3
+- Add python3-xml to python3 sub package Buildrequires.
+
+* Tue May 23 2017 Xiaolin Li <xiaolinl@vmware.com> - 1.52.1-2
+- Added python3 subpackage.
+
+* Wed Apr 12 2017 Danut Moraru <dmoraru@vmware.com> - 1.52.1-1
+- Updated to version 1.52.1
+
+* Thu Oct 06 2016 ChangLee <changlee@vmware.com> - 1.46.0-3
+- Modified %check
+
+* Tue May 24 2016 Priyesh Padmavilasom <ppadmavilasom@vmware.com> - 1.46.0-2
+- GA - Bump release of all rpms
+
+* Thu Feb 25 2016 Kumar Kaushik <kaushikk@vmware.com> - 1.46.0-1
+- Updated version.
+
+* Mon Oct 12 2015 Xiaolin Li <xiaolinl@vmware.com> - 1.43.3-4
+- Moving static lib files to devel package.
+
+* Fri Oct 9 2015 Xiaolin Li <xiaolinl@vmware.com> - 1.43.3-3
+- Removing la files from packages.
+
+* Mon Jul 6 2015 Alexey Makhalov <amakhalov@vmware.com> - 1.43.3-2
+- Added more requirements for devel subpackage.

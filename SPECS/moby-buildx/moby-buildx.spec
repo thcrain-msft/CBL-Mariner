@@ -1,7 +1,7 @@
 Summary: A Docker CLI plugin for extended build capabilities with BuildKit
 Name: moby-buildx
 Version: 0.4.1+azure
-Release: 2%{?dist}
+Release: 3%{?dist}
 License: ASL 2.0
 Group: Tools/Container
 
@@ -79,19 +79,29 @@ cp %{SOURCE2} %{buildroot}/usr/share/doc/%{name}-%{version}/NOTICE
 %{_libexecdir}/docker/cli-plugins/docker-buildx
 
 %changelog
-* Thu Dec 10 2020 Andrew Phelps <anphel@microsoft.com> 0.4.1+azure-2
+* Tue Apr 20 2021 Thomas Crain <thcrain@microsoft.com> - 0.4.1+azure-3
+- Increment release to force republishing using golang 1.15.11 (security update)
+
+* Thu Dec 10 2020 Andrew Phelps <anphel@microsoft.com> - 0.4.1+azure-2
 - Increment release to force republishing using golang 1.15.
-* Thu Jun 11 2020 Andrew Phelps <anphel@microsoft.com> 0.4.1+azure-1
+
+* Thu Jun 11 2020 Andrew Phelps <anphel@microsoft.com> - 0.4.1+azure-1
 - Update to version 0.4.1+azure
-* Wed May 20 2020 Joe Schmitt <joschmit@microsoft.com> 0.3.1+azure-5
+
+* Wed May 20 2020 Joe Schmitt <joschmit@microsoft.com> - 0.3.1+azure-5
 - Remove reliance on existing GOPATH environment variable.
-* Sat May 09 2020 Nick Samson <nisamson@microsoft.com> 0.3.1+azure-4
+
+* Sat May 09 2020 Nick Samson <nisamson@microsoft.com> - 0.3.1+azure-4
 - Added %%license line automatically
-* Mon May 04 2020 Eric Li <eli@microsoft.com> 0.3.1+azure-3
+
+* Mon May 04 2020 Eric Li <eli@microsoft.com> - 0.3.1+azure-3
 - Add #Source0: and license verified
-* Fri May 01 2020 Emre Girgin <mrgirgin@microsoft.com> 0.3.1+azure-2
+
+* Fri May 01 2020 Emre Girgin <mrgirgin@microsoft.com> - 0.3.1+azure-2
 - Renaming go to golang
-* Fri Apr 03 2020 Mohan Datla <mdatla@microsoft.com> 0.3.1+azure-1
+
+* Fri Apr 03 2020 Mohan Datla <mdatla@microsoft.com> - 0.3.1+azure-1
 - Initial CBL-Mariner import from Azure.
+
 * Tue Mar 24 2020 Brian Goff <brgoff@microsoft.com>
 - Initial version
