@@ -1,7 +1,7 @@
 Summary:        agent for collecting, processing, aggregating, and writing metrics.
 Name:           telegraf
 Version:        1.14.5
-Release:        5%{?dist}
+Release:        6%{?dist}
 License:        MIT
 Group:          Development/Tools
 Vendor:         Microsoft Corporation
@@ -80,22 +80,32 @@ fi
 %dir %{_sysconfdir}/%{name}/telegraf.d
 
 %changelog
-*   Thu Dec 10 2020 Andrew Phelps <anphel@microsoft.com> 1.14.5-5
--   Increment release to force republishing using golang 1.15.
-*   Thu Oct 15 2020 Pawel Winogrodzki <pawelwi@microsoft.com> 1.14.5-4
--   License verified.
--   Added %%license macro.
--   Fixed source URL.
--   Switched to %%autosetup.
-*   Fri Aug 21 2020 Suresh Babu Chalamalasetty <schalam@microsoft.com> 1.14.5-3
--   Add runtime required procps-ng and shadow-utils
-*   Tue Jul 14 2020 Jonathan Chiu <jochi@microsoft.com> 1.14.5-1
--   Update to version 1.14.5
-*   Tue Sep 03 2019 Mateusz Malisz <mamalisz@microsoft.com> 1.7.4-2
--   Initial CBL-Mariner import from Photon (license: Apache2).
-*   Fri Sep 07 2018 Michelle Wang <michellew@vmware.com> 1.7.4-1
--   Update version to 1.7.4 and its plugin version to 1.4.0.
-*   Mon Sep 18 2017 Alexey Makhalov <amakhalov@vmware.com> 1.3.4-2
--   Remove shadow from requires and use explicit tools for post actions
-*   Tue Jul 18 2017 Dheeraj Shetty <dheerajs@vmware.com> 1.3.4-1
--   first version
+* Tue Apr 20 2021 Thomas Crain <thcrain@microsoft.com> - 1.14.5-6
+- Increment release to force republishing using golang 1.15.11 (security update)
+
+* Thu Dec 10 2020 Andrew Phelps <anphel@microsoft.com> - 1.14.5-5
+- Increment release to force republishing using golang 1.15.
+
+* Thu Oct 15 2020 Pawel Winogrodzki <pawelwi@microsoft.com> - 1.14.5-4
+- License verified.
+- Added %%license macro.
+- Fixed source URL.
+- Switched to %%autosetup.
+
+* Fri Aug 21 2020 Suresh Babu Chalamalasetty <schalam@microsoft.com> - 1.14.5-3
+- Add runtime required procps-ng and shadow-utils
+
+* Tue Jul 14 2020 Jonathan Chiu <jochi@microsoft.com> - 1.14.5-1
+- Update to version 1.14.5
+
+* Tue Sep 03 2019 Mateusz Malisz <mamalisz@microsoft.com> - 1.7.4-2
+- Initial CBL-Mariner import from Photon (license: Apache2).
+
+* Fri Sep 07 2018 Michelle Wang <michellew@vmware.com> - 1.7.4-1
+- Update version to 1.7.4 and its plugin version to 1.4.0.
+
+* Mon Sep 18 2017 Alexey Makhalov <amakhalov@vmware.com> - 1.3.4-2
+- Remove shadow from requires and use explicit tools for post actions
+
+* Tue Jul 18 2017 Dheeraj Shetty <dheerajs@vmware.com> - 1.3.4-1
+- first version

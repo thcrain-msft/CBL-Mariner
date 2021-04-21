@@ -1,7 +1,7 @@
 Summary:        CLI tool for spawning and running containers per OCI spec.
 Name:           moby-runc
 Version:        1.0.0~rc10+azure
-Release:        5%{?dist}
+Release:        6%{?dist}
 License:        ASL 2.0
 URL:            https://runc.io/
 
@@ -113,15 +113,23 @@ cp %{SOURCE7} %{buildroot}/usr/share/doc/%{name}-%{version}/LICENSE
 %{_mandir}/*/*
 
 %changelog
-* Thu Dec 10 2020 Andrew Phelps <anphel@microsoft.com> 1.0.0~rc10+azure-5
+* Tue Apr 20 2021 Thomas Crain <thcrain@microsoft.com> - 1.0.0~rc10+azure-6
+- Increment release to force republishing using golang 1.15.11 (security update)
+
+* Thu Dec 10 2020 Andrew Phelps <anphel@microsoft.com> - 1.0.0~rc10+azure-5
 - Increment release to force republishing using golang 1.15.
-* Wed May 20 2020 Joe Schmitt <joschmit@microsoft.com> 1.0.0~rc10+azure-4
+
+* Wed May 20 2020 Joe Schmitt <joschmit@microsoft.com> - 1.0.0~rc10+azure-4
 - Remove reliance on existing GOPATH environment variable.
-* Sat May 09 2020 Nick Samson <nisamson@microsoft.com> 1.0.0~rc10+azure-3
+
+* Sat May 09 2020 Nick Samson <nisamson@microsoft.com> - 1.0.0~rc10+azure-3
 - Added %%license line automatically
-* Fri May 01 2020 Emre Girgin <mrgirgin@microsoft.com> 1.0.0~rc10+azure-2
+
+* Fri May 01 2020 Emre Girgin <mrgirgin@microsoft.com> - 1.0.0~rc10+azure-2
 - Renaming go to golang
-* Fri Apr 03 2020 Mohan Datla <mdatla@microsoft.com> 1.0.0~rc10+azure-1
+
+* Fri Apr 03 2020 Mohan Datla <mdatla@microsoft.com> - 1.0.0~rc10+azure-1
 - Initial CBL-Mariner import from Azure.
+
 * Thu Jan 23 2020 Brian Goff <brgoff@microsoft.com>
 - Initial version

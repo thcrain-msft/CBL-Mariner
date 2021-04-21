@@ -1,7 +1,7 @@
 Summary: The open-source application container engine
 Name:    moby-engine
 Version: 19.03.15+azure
-Release: 1%{?dist}
+Release: 2%{?dist}
 License: ASL 2.0
 Group:   Tools/Container
 
@@ -149,44 +149,47 @@ fi
 /usr/share/doc/%{name}-%{version}/*
 
 %changelog
-* Thu Apr 15 2021 Andrew Phelps <anphel@microsoft.com> 19.03.15+azure-1
+* Tue Apr 20 2021 Thomas Crain <thcrain@microsoft.com> - 19.03.15+azure-2
+- Increment release to force republishing using golang 1.15.11 (security update)
+
+* Thu Apr 15 2021 Andrew Phelps <anphel@microsoft.com> - 19.03.15+azure-1
 - Update to version 19.03.15+azure
 
-* Thu Dec 10 2020 Andrew Phelps <anphel@microsoft.com> 19.03.11+azure-4
+* Thu Dec 10 2020 Andrew Phelps <anphel@microsoft.com> - 19.03.11+azure-4
 - Increment release to force republishing using golang 1.15.
 
-* Tue Jul 21 2020 Nicolas Ontiveros <niontive@microsoft.com> 19.03.11+azure-3
+* Tue Jul 21 2020 Nicolas Ontiveros <niontive@microsoft.com> - 19.03.11+azure-3
 - Remove changes for CIS Docker Security Benchmark compliance.
 
-* Fri Jul 03 2020 Chris Co <chrco@microsoft.com> 19.03.11+azure-2
+* Fri Jul 03 2020 Chris Co <chrco@microsoft.com> - 19.03.11+azure-2
 - Remove default daemon configuration
 
-* Thu Jun 11 2020 Andrew Phelps <anphel@microsoft.com> 19.03.11+azure-1
+* Thu Jun 11 2020 Andrew Phelps <anphel@microsoft.com> - 19.03.11+azure-1
 - Update to version 19.03.11+azure
 
-* Thu May 28 2020 Nicolas Ontiveros <niontive@microsoft.com> 3.0.12~rc.1+azure-8
+* Thu May 28 2020 Nicolas Ontiveros <niontive@microsoft.com> - 3.0.12~rc.1+azure-8
 - Make default configuration comply with CIS Docker Security Benchmark.
 
-* Wed May 20 2020 Joe Schmitt <joschmit@microsoft.com> 3.0.12~rc.1+azure-7
+* Wed May 20 2020 Joe Schmitt <joschmit@microsoft.com> - 3.0.12~rc.1+azure-7
 - Remove reliance on existing GOPATH environment variable.
 
-* Sat May 09 2020 Nick Samson <nisamson@microsoft.com> 3.0.12~rc.1+azure-6
+* Sat May 09 2020 Nick Samson <nisamson@microsoft.com> - 3.0.12~rc.1+azure-6
 - Added %%license line automatically
 
-* Fri May 08 2020 Pawel Winogrodzki <pawelwi@microsoft.com> 3.0.12~rc.1+azure-5
+* Fri May 08 2020 Pawel Winogrodzki <pawelwi@microsoft.com> - 3.0.12~rc.1+azure-5
 - Removing *Requires for "ca-certificates".
 - Removing duplicate %%files directive.
 
-* Fri May 08 2020 Eric Li <eli@microsoft.com> 3.0.12~rc.1+azure-4
+* Fri May 08 2020 Eric Li <eli@microsoft.com> - 3.0.12~rc.1+azure-4
 - Add #Source0: and license verified
 
-* Wed May 06 2020 Mohan Datla <mdatla@microsoft.com> 3.0.12~rc.1+azure-3
+* Wed May 06 2020 Mohan Datla <mdatla@microsoft.com> - 3.0.12~rc.1+azure-3
 - Fixing the moby server version
 
-* Fri May 01 2020 Emre Girgin <mrgirgin@microsoft.com> 3.0.12~rc.1+azure-2
+* Fri May 01 2020 Emre Girgin <mrgirgin@microsoft.com> - 3.0.12~rc.1+azure-2
 - Renaming go to golang
 
-* Fri Apr 03 2020 Mohan Datla <mdatla@microsoft.com> 3.0.12~rc.1+azure-1
+* Fri Apr 03 2020 Mohan Datla <mdatla@microsoft.com> - 3.0.12~rc.1+azure-1
 - Initial CBL-Mariner import from Azure.
 
 * Mon Jan 27 2020 Brian Goffs <brgoff@microsoft.com>

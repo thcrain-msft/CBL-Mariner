@@ -6,7 +6,7 @@
 Summary:        CLI tool for spawning and running containers per OCI spec.
 Name:           runc
 Version:        %{spec_version}
-Release:        7%{?dist}
+Release:        8%{?dist}
 License:        ASL 2.0
 URL:            https://runc.io/
 #Source0:       https://github.com/opencontainers/runc/archive/v%{url_version}.tar.gz
@@ -84,21 +84,32 @@ make install BINDIR=%{buildroot}%{_sbindir}
 %{_sbindir}/runc
 
 %changelog
-*   Thu Dec 10 2020 Andrew Phelps <anphel@microsoft.com> 1.0.0.rc8-7
--   Increment release to force republishing using golang 1.15.
-*   Wed May 20 2020 Joe Schmitt <joschmit@microsoft.com> 1.0.0.rc8-6
--   Remove reliance on existing GOPATH environment variable.
-*   Sat May 09 2020 Nick Samson <nisamson@microsoft.com> 1.0.0.rc8-5
--   Added %%license line automatically
-*   Thu Apr 30 2020 Emre Girgin <mrgirgin@microsoft.com> 1.0.0.rc8-4
--   Renaming go to golang
-*   Mon Apr 20 2020 Eric Li <eli@microsoft.com> 1.0.0.rc8-3
--   Update Source0:, delete sha1, add #Source0:. Verified license.
-*   Tue Sep 03 2019 Mateusz Malisz <mamalisz@microsoft.com> 1.0.0.rc8-2
--   Initial CBL-Mariner import from Photon (license: Apache2).
-*   Thu Jun 13 2019 Tapas Kundu <tkundu@vmware.com> 1.0.0.rc8-1
--   Update to release 1.0.0-rc8
-*   Fri Jun 23 2017 Xiaolin Li <xiaolinl@vmware.com> 0.1.1-2
--   Add iptables-devel to BuildRequires
-*   Tue Apr 25 2017 Vinay Kulkarni <kulkarniv@vmware.com> 0.1.1-1
--   Initial runc package for PhotonOS.
+* Tue Apr 20 2021 Thomas Crain <thcrain@microsoft.com> - 1.0.0.rc8-8
+- Increment release to force republishing using golang 1.15.11 (security update)
+
+* Thu Dec 10 2020 Andrew Phelps <anphel@microsoft.com> - 1.0.0.rc8-7
+- Increment release to force republishing using golang 1.15.
+
+* Wed May 20 2020 Joe Schmitt <joschmit@microsoft.com> - 1.0.0.rc8-6
+- Remove reliance on existing GOPATH environment variable.
+
+* Sat May 09 2020 Nick Samson <nisamson@microsoft.com> - 1.0.0.rc8-5
+- Added %%license line automatically
+
+* Thu Apr 30 2020 Emre Girgin <mrgirgin@microsoft.com> - 1.0.0.rc8-4
+- Renaming go to golang
+
+* Mon Apr 20 2020 Eric Li <eli@microsoft.com> - 1.0.0.rc8-3
+- Update Source0:, delete sha1, add #Source0:. Verified license.
+
+* Tue Sep 03 2019 Mateusz Malisz <mamalisz@microsoft.com> - 1.0.0.rc8-2
+- Initial CBL-Mariner import from Photon (license: Apache2).
+
+* Thu Jun 13 2019 Tapas Kundu <tkundu@vmware.com> - 1.0.0.rc8-1
+- Update to release 1.0.0-rc8
+
+* Fri Jun 23 2017 Xiaolin Li <xiaolinl@vmware.com> - 0.1.1-2
+- Add iptables-devel to BuildRequires
+
+* Tue Apr 25 2017 Vinay Kulkarni <kulkarniv@vmware.com> - 0.1.1-1
+- Initial runc package for PhotonOS.

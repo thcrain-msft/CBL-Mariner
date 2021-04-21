@@ -1,7 +1,7 @@
 Summary:        A highly-available key value store for shared configuration
 Name:           etcd
 Version:        3.4.13
-Release:        1%{?dist}
+Release:        2%{?dist}
 License:        ASL 2.0
 URL:            https://github.com/etcd-io/etcd/
 Group:          System Environment/Security
@@ -74,48 +74,72 @@ rm -rf %{buildroot}/*
 %config(noreplace) %{_sysconfdir}/etcd/etcd-default-conf.yml
 
 %changelog
-*   Mon Jan 25 2021 Nicolas Guibourge <nicolasg@microsoft.com> 3.4.13-1
--   Update to version 3.4.13.
-*   Thu Dec 10 2020 Andrew Phelps <anphel@microsoft.com> 3.3.25-2
--   Increment release to force republishing using golang 1.15.
-*   Thu Sep 03 2020 Joe Schmitt <joschmit@microsoft.com> 3.3.25-1
--   Update to version 3.3.25 which fixes CVE-2020-15106, CVE-2020-15112, CVE-2020-15114, and CVE-2020-15115.
-*   Sat May 09 2020 Nick Samson <nisamson@microsoft.com> 3.3.11-2
--   Added %%license line automatically
-*   Thu May 07 2020 Nicolas Ontiveros <niontive@microsoft.com> 3.3.11-1
--   Upgrade to version 3.3.11, which fixes CVE-2018-16886.
--   Update summary.
-*   Thu Apr 30 2020 Emre Girgin <mrgirgin@microsoft.com> 3.3.9-4
--   Renaming go to golang
-*   Wed Apr 08 2020 Pawel Winogrodzki <pawelwi@microsoft.com> 3.3.9-3
--   Fixed "Source0" tag.
--   License verified and "License" tag updated.
--   Removed "%%define sha1".
-*   Tue Sep 03 2019 Mateusz Malisz <mamalisz@microsoft.com> 3.3.9-2
--   Initial CBL-Mariner import from Photon (license: Apache2).
-*   Fri Sep 21 2018 Sujay G <gsujay@vmware.com> 3.3.9-1
--   Bump etcd version to 3.3.9
-*   Mon Sep 18 2017 Alexey Makhalov <amakhalov@vmware.com> 3.1.5-4
--   Remove shadow requires
-*   Sun Aug 27 2017 Vinay Kulkarni <kulkarniv@vmware.com> 3.1.5-3
--   File based configuration for etcd service.
-*   Wed May 31 2017 Harish Udaiya Kumar <hudaiyakumar@vmware.com> 3.1.5-2
--   Provide preset file to disable service by default
-*   Thu Apr 06 2017 Anish Swaminathan <anishs@vmware.com> 3.1.5-1
--   Upgraded to version 3.1.5, build from sources
-*   Fri Sep 2 2016 Xiaolin Li <xiaolinl@vmware.com> 3.0.9-1
--   Upgraded to version 3.0.9
-*   Fri Jun 24 2016 Xiaolin Li <xiaolinl@vmware.com> 2.3.7-1
--   Upgraded to version 2.3.7
-*   Wed May 25 2016 Nick Shi <nshi@vmware.com> 2.2.5-3
--   Changing etcd service type from simple to notify
-*   Tue May 24 2016 Priyesh Padmavilasom <ppadmavilasom@vmware.com> 2.2.5-2
--   GA - Bump release of all rpms
-*   Tue Feb 23 2016 Harish Udaiya Kumar <hudaiyakumar@vmware.com> 2.2.5-1
--   Upgraded to version 2.2.5
-*   Tue Jul 28 2015 Divya Thaluru <dthaluru@vmware.com> 2.1.1-2
--   Adding etcd service file
-*   Tue Jul 21 2015 Vinay Kulkarni <kulkarniv@vmware.com> 2.1.1-1
--   Update to version etcd v2.1.1
-*   Tue Mar 10 2015 Divya Thaluru <dthaluru@vmware.com> 2.0.4-1
--   Initial build.  First version
+* Tue Apr 20 2021 Thomas Crain <thcrain@microsoft.com> - 3.4.13-2
+- Increment release to force republishing using golang 1.15.11 (security update)
+
+* Mon Jan 25 2021 Nicolas Guibourge <nicolasg@microsoft.com> - 3.4.13-1
+- Update to version 3.4.13.
+
+* Thu Dec 10 2020 Andrew Phelps <anphel@microsoft.com> - 3.3.25-2
+- Increment release to force republishing using golang 1.15.
+
+* Thu Sep 03 2020 Joe Schmitt <joschmit@microsoft.com> - 3.3.25-1
+- Update to version 3.3.25 which fixes CVE-2020-15106, CVE-2020-15112, CVE-2020-15114, and CVE-2020-15115.
+
+* Sat May 09 2020 Nick Samson <nisamson@microsoft.com> - 3.3.11-2
+- Added %%license line automatically
+
+* Thu May 07 2020 Nicolas Ontiveros <niontive@microsoft.com> - 3.3.11-1
+- Upgrade to version 3.3.11, which fixes CVE-2018-16886.
+- Update summary.
+
+* Thu Apr 30 2020 Emre Girgin <mrgirgin@microsoft.com> - 3.3.9-4
+- Renaming go to golang
+
+* Wed Apr 08 2020 Pawel Winogrodzki <pawelwi@microsoft.com> - 3.3.9-3
+- Fixed "Source0" tag.
+
+- License verified and "License" tag updated.
+- Removed "%%define sha1".
+
+* Tue Sep 03 2019 Mateusz Malisz <mamalisz@microsoft.com> - 3.3.9-2
+- Initial CBL-Mariner import from Photon (license: Apache2).
+
+* Fri Sep 21 2018 Sujay G <gsujay@vmware.com> - 3.3.9-1
+- Bump etcd version to 3.3.9
+
+* Mon Sep 18 2017 Alexey Makhalov <amakhalov@vmware.com> - 3.1.5-4
+- Remove shadow requires
+
+* Sun Aug 27 2017 Vinay Kulkarni <kulkarniv@vmware.com> - 3.1.5-3
+- File based configuration for etcd service.
+
+* Wed May 31 2017 Harish Udaiya Kumar <hudaiyakumar@vmware.com> - 3.1.5-2
+- Provide preset file to disable service by default
+
+* Thu Apr 06 2017 Anish Swaminathan <anishs@vmware.com> - 3.1.5-1
+- Upgraded to version 3.1.5, build from sources
+
+* Fri Sep 2 2016 Xiaolin Li <xiaolinl@vmware.com> - 3.0.9-1
+- Upgraded to version 3.0.9
+
+* Fri Jun 24 2016 Xiaolin Li <xiaolinl@vmware.com> - 2.3.7-1
+- Upgraded to version 2.3.7
+
+* Wed May 25 2016 Nick Shi <nshi@vmware.com> - 2.2.5-3
+- Changing etcd service type from simple to notify
+
+* Tue May 24 2016 Priyesh Padmavilasom <ppadmavilasom@vmware.com> - 2.2.5-2
+- GA - Bump release of all rpms
+
+* Tue Feb 23 2016 Harish Udaiya Kumar <hudaiyakumar@vmware.com> - 2.2.5-1
+- Upgraded to version 2.2.5
+
+* Tue Jul 28 2015 Divya Thaluru <dthaluru@vmware.com> - 2.1.1-2
+- Adding etcd service file
+
+* Tue Jul 21 2015 Vinay Kulkarni <kulkarniv@vmware.com> - 2.1.1-1
+- Update to version etcd v2.1.1
+
+* Tue Mar 10 2015 Divya Thaluru <dthaluru@vmware.com> - 2.0.4-1
+- Initial build.  First version

@@ -1,7 +1,7 @@
 Summary: The open-source application container engine client.
 Name: moby-cli
 Version: 19.03.15+azure
-Release: 1%{?dist}
+Release: 2%{?dist}
 License: ASL 2.0
 Group: Tools/Container
 
@@ -94,29 +94,32 @@ cp %{SOURCE2} %{buildroot}/usr/share/doc/%{name}-%{version}/LICENSE
 /usr/share/fish/vendor_completions.d/docker.fish
 
 %changelog
-* Thu Apr 15 2021 Andrew Phelps <anphel@microsoft.com> 19.03.15+azure-1
+* Tue Apr 20 2021 Thomas Crain <thcrain@microsoft.com> - 19.03.15+azure-2
+- Increment release to force republishing using golang 1.15.11 (security update)
+
+* Thu Apr 15 2021 Andrew Phelps <anphel@microsoft.com> - 19.03.15+azure-1
 - Update to version 19.03.15+azure
 - Rename 'md2man' to 'go-md2man' in md2man-all.sh
 
-* Thu Dec 10 2020 Andrew Phelps <anphel@microsoft.com> 19.03.11+azure-2
+* Thu Dec 10 2020 Andrew Phelps <anphel@microsoft.com> - 19.03.11+azure-2
 - Increment release to force republishing using golang 1.15.
 
-* Thu Jun 11 2020 Andrew Phelps <anphel@microsoft.com> 19.03.11+azure-1
+* Thu Jun 11 2020 Andrew Phelps <anphel@microsoft.com> - 19.03.11+azure-1
 - Update to version 19.03.11+azure
 
-* Wed May 20 2020 Joe Schmitt <joschmit@microsoft.com> 3.0.12~rc.1+azure-5
+* Wed May 20 2020 Joe Schmitt <joschmit@microsoft.com> - 3.0.12~rc.1+azure-5
 - Remove reliance on existing GOPATH environment variable.
 
-* Sat May 09 2020 Nick Samson <nisamson@microsoft.com> 3.0.12~rc.1+azure-4
+* Sat May 09 2020 Nick Samson <nisamson@microsoft.com> - 3.0.12~rc.1+azure-4
 - Added %%license line automatically
 
-* Tue May 05 2020 Eric Li <eli@microsoft.com> 3.0.12~rc.1+azure-3
+* Tue May 05 2020 Eric Li <eli@microsoft.com> - 3.0.12~rc.1+azure-3
 - Add #Source0:, update URL:, and license verified
 
-* Fri May 01 2020 Emre Girgin <mrgirgin@microsoft.com> 3.0.12~rc.1+azure-2
+* Fri May 01 2020 Emre Girgin <mrgirgin@microsoft.com> - 3.0.12~rc.1+azure-2
 - Renaming go to golang
 
-* Fri Apr 03 2020 Mohan Datla <mdatla@microsoft.com> 3.0.12~rc.1+azure-1
+* Fri Apr 03 2020 Mohan Datla <mdatla@microsoft.com> - 3.0.12~rc.1+azure-1
 - Initial CBL-Mariner import from Azure.
 
 * Mon Jan 27 2020 Brian Goffs <brgoff@microsoft.com>
