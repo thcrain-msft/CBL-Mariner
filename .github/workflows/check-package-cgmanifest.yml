@@ -12,31 +12,27 @@ jobs:
     name: Validate Manifests
     runs-on: ubuntu-18.04
     steps:
-
+    
     - name: Check out code
       uses: actions/checkout@v2
 
-    - name: Get base commit for PRs
+    - name: Get the changed spec files for PRs
       if: ${{ github.event_name == 'pull_request' }}
       run: |
         git fetch origin ${{ github.base_ref }}
-        echo "base_sha=$(git rev-parse origin/${{ github.base_ref }})" >> $GITHUB_ENV 
+        base_sha=$(git rev-parse origin/${{ github.base_ref }})
         echo "Merging ${{ github.sha }} into ${{ github.base_ref }}"
-
-    - name: Get base commit for Pushes
+        echo "Files changed: '$(git diff-tree --no-commit-id --name-only -r ${{ env.base_sha }} ${{ github.sha }})'"
+        changed_specs=$(git diff-tree --no-commit-id --name-only -r $base_sha ${{ github.sha }} | { grep "\.spec$" || test $? = 1; })
+        echo "Files to validate: '${changed_specs}'"
+        echo "specs-to-check=$(echo "${changed_specs}")" >> $GITHUB_ENV
+        
+    - name: Get all spec files for Pushes
       if: ${{ github.event_name == 'push' }}
       run: |
-        git fetch origin ${{ github.event.before }}
-        echo "base_sha=${{ github.event.before }}" >> $GITHUB_ENV 
-        echo "Merging ${{ github.sha }} into ${{ github.event.before }}"
+        all_specs=$( find . -name "*.spec" )
+        echo "specs-to-check=$(echo "${all_specs}")" >> $GITHUB_ENV
 
-    - name: Get the changed files
+    - name: Run the validation check
       run: |
-        echo "Files changed: '$(git diff-tree --no-commit-id --name-only -r ${{ env.base_sha }} ${{ github.sha }})'"
-        changed_specs=$(git diff-tree --no-commit-id --name-only -r ${{ env.base_sha }} ${{ github.sha }} | { grep "\.spec$" || test $? = 1; })
-        echo "Files to validate: '${changed_specs}'"
-        echo "updated-specs=$(echo ${changed_specs})" >> $GITHUB_ENV
-
-    - name: Check each spec
-      run: |
-        .github/workflows/validate-cg-manifest.sh ${{ env.updated-specs }}
+        .github/workflows/validate-cg-manifest.sh ${{ env.specs-to-check }}
