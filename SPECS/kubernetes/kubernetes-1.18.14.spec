@@ -10,7 +10,7 @@
 Summary:        Microsoft Kubernetes
 Name:           kubernetes
 Version:        1.18.14
-Release:        4%{?dist}
+Release:        5%{?dist}
 License:        ASL 2.0
 Vendor:         Microsoft Corporation
 Distribution:   Mariner
@@ -164,6 +164,8 @@ done
 %install
 # install binaries
 install -m 755 -d %{buildroot}%{_bindir}
+install -m 755 -d %{buildroot}%{_prefix}/local/bin
+
 cd %{_builddir}
 binaries=%{host_components}
 for bin in ${binaries}; do
@@ -171,13 +173,15 @@ for bin in ${binaries}; do
   install -p -m 755 -t %{buildroot}%{_bindir} %{name}/node/bin/${bin}
 done
 
+# binaries for containers must be under /usr/local/bin and not under /usr/bin
 binaries=%{container_image_components}
 for bin in ${binaries}; do
   echo "+++ INSTALLING ${bin}"
-  install -p -m 755 -t %{buildroot}%{_bindir} %{name}/node/bin/${bin}
+  install -p -m 755 -t %{buildroot}%{_prefix}/local/bin %{name}/node/bin/${bin}
 done
 
-install -p -m 755 -t %{buildroot}%{_bindir} %{name}/node/bin/pause
+# pause binary must be under /usr/local/bin and not under /usr/bin
+install -p -m 755 -t %{buildroot}%{_prefix}/local/bin %{name}/node/bin/pause
 
 # install service files
 install -d -m 0755 %{buildroot}/%{_lib}/systemd/system
@@ -247,29 +251,32 @@ fi
 %files kube-proxy
 %defattr(-,root,root)
 %license LICENSES
-%{_bindir}/kube-proxy
+%{_prefix}/local/bin/kube-proxy
 
 %files kube-apiserver
 %defattr(-,root,root)
 %license LICENSES
-%{_bindir}/kube-apiserver
+%{_prefix}/local/bin/kube-apiserver
 
 %files kube-controller-manager
 %defattr(-,root,root)
 %license LICENSES
-%{_bindir}/kube-controller-manager
+%{_prefix}/local/bin/kube-controller-manager
 
 %files kube-scheduler
 %defattr(-,root,root)
 %license LICENSES
-%{_bindir}/kube-scheduler
+%{_prefix}/local/bin/kube-scheduler
 
 %files pause
 %defattr(-,root,root)
 %license LICENSES
-%{_bindir}/pause
+%{_prefix}/local/bin/pause
 
 %changelog
+* Tue May 04 2021 Nicolas Guibourge <nicolasg@microsoft.com> 1.18.14-5
+- Move binaries for containers under "/usr/local/bin".
+
 * Mon May 03 2021 Nicolas Guibourge <nicolasg@microsoft.com> 1.18.14-4
 - Increment release to force republishing using golang 1.15.11.
 
