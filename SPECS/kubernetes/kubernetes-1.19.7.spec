@@ -10,7 +10,7 @@
 Summary:        Microsoft Kubernetes
 Name:           kubernetes
 Version:        1.19.7
-Release:        2%{?dist}
+Release:        3%{?dist}
 License:        ASL 2.0
 Vendor:         Microsoft Corporation
 Distribution:   Mariner
@@ -102,6 +102,11 @@ echo "+++ extract sources from tarball"
 mkdir -p %{_builddir}/%{name}/src
 cd %{_builddir}/%{name}/src
 tar -xof %{_builddir}/%{name}/kubernetes-src.tar.gz
+
+# manually set k8s version variables
+# because sources have been expanded from tarball (not from git)
+source ./hack/lib/version.sh
+kube::version::get_version_vars
 
 # build host and container image related components
 components_to_build=%{host_components}
@@ -266,6 +271,9 @@ fi
 %{_bindir}/pause
 
 %changelog
+* Tue May 11 2021 Nicolas Guibourge <nicolasg@microsoft.com> 1.19.7-3
+- Manually set version variables.
+
 * Mon May 03 2021 Nicolas Guibourge <nicolasg@microsoft.com> 1.19.7-2
 - Increment release to force republishing using golang 1.15.11.
 
